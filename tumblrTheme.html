@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--Learn to buildthemes.tumblr.com-->
+<meta name="color:Background" content="#98BEBC" />
+<meta name="color:Links" content="#979395" />
+<meta name="color:Masthead background" content="#ffffff" />
+<meta name="color:Masthead text" content="#ffffff" />
+<meta name="color:Text" content="#ffffff" />
+<meta name="font:Font" content="Arquitecta"/>
+<meta name="if:Persistent Masthead" content="1"/>
+<meta name="if:Following in sidebar" content="1"/>
+<meta name="if:Hide sidebar" content="0"/>
+<meta name="if:Likes in sidebar" content="1"/>
+<meta name="if:Search and description in sidebar" content="1"/>
+<meta name="image:Background" content=""/>
+<meta name="color:Glass Tint" content="#A8A8A8" />
+<meta name="text:Link 1" content="" />
+<meta name="text:Link 1 Text" content="" />
+<meta name="text:Link 2" content="" />
+<meta name="text:Link 2 Text" content="" />
+<meta name="text:Link 3" content="" />
+<meta name="text:Link 3 Text" content="" />
+<meta name="text:Link 4" content="" />
+<meta name="text:Link 4 Text" content="" />
+<meta name="text:Link 5" content="" />
+<meta name="text:Link 5 Text" content="" />
+<meta name="text:Link 6" content="" />
+<meta name="text:Link 6 Text" content="" />
+<meta name="text:Link 7" content="" />
+<meta name="text:Link 7 Text" content="" />
+<meta name="text:Link 8" content="" />
+<meta name="text:Link 8 Text" content="" />
+<meta name="text:Link 9" content="" />
+<meta name="text:Link 9 Text" content="" />
+<meta name="text:Link 10" content="" />
+<meta name="text:Link 10 Text" content="" />
+<meta name="select:Columns" content="un" title="1 column">
+<meta name="select:Columns" content="deux" title="2 columns">
+<meta name="select:Columns" content="trois" title="3 columns">
+<meta name="select:Columns" content="quatre" title="4 columns">
+<meta name="select:Columns" content="cinq" title="5 columns">
+{block:Description} <meta name="description" content="{MetaDescription}" /> {/block:Description}
+
+<title>{block:TagPage}{Tag} - {/block:TagPage} {block:SearchPage}{lang:Search results for SearchQuery} - {/block:SearchPage}{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}</title>
+
+<link rel="shortcut icon" href="{Favicon}"/>
+<link rel="alternate" type="application/rss+xml" title="{Title} RSS" href="{RSS}"/>
+<link rel="stylesheet" href="http://static.tumblr.com/hznqxps/ivOmgjf8v/normalize.css" />
+
+<style>
+/*Basic styles*/
+body {
+    background: {color:Background} url('{image:Background}') repeat fixed;
+    background-size: 100%;
+    color: {color:Text};
+    font-family: {font:Font};
+    font-size: 0.8em;
+}
+a {
+    color: {color:Links};
+    text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+nav li {
+    display: inline;
+}
+iframe, img, embed, object, video {
+    max-width: 100%;
+}
+img {
+    background: rgba(0, 0, 0, 0.06);
+    height: auto;
+    width: auto;
+}
+{block:IndexPage}
+.un {
+    width: 100%;
+}
+.deux {
+    width: 48%;
+    margin: 0 0.8%;
+}
+.trois {
+    width: 31%;
+    margin: 0 0.8%;
+}
+.quatre {
+    width: 24%;
+    margin: 0 0.4%;
+}
+.cinq {
+    width: 19%;
+    margin: 0 0.4%;
+}
+{/block:IndexPage}
+{block:PermalinkPage}
+article {
+    width: 100%;
+}
+{/block:PermalinkPage}
+/*Masthead*/
+#masthead {
+    background: {color:Masthead background};
+    {block:IfPersistentMasthead}
+    position: fixed;
+    {/block:IfPersistentMasthead}
+    {block:IfNotPersistentMasthead}
+    position: absolute;
+    {/block:IfNotPersistentMasthead}
+    top: 20px;
+    right: 0;
+    /*width: 600px;*/
+    height: 64px;
+    padding: 0 10px;
+    margin-bottom: 5%;
+    z-index: 1000;
+    border-radius: 10px 0 0 10px;
+}
+#icon {
+    background: url('{PortraitURL-64}');
+    width: 64px;
+    height: 64px;
+    float: right;
+    margin: 10px, 0;
+}
+#masthead h1 {
+    float: right;
+}
+#masthead h4 {
+    float: left;
+}
+#masthead h1 , #masthead h4 {
+    margin: auto 10px;
+    height: 62px;
+    line-height: 62px;
+    white-space: nowrap;
+}
+#masthead a {
+    color: {color:Masthead text};
+}
+#masthead nav {
+    display: block;
+    float: right;
+}
+/*Pages*/
+#masthead nav li a {
+    border-bottom: 1px solid {color:Masthead text};
+    width: auto;
+    margin-right: 0.5%;
+    padding: 0.2%;
+}
+/*Sidebar*/
+#sidebar {
+    position: relative;
+    float: right;
+    margin: 0 5%;
+    width: 20%;
+}
+.item {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15%;
+}
+/*Content area*/
+#content {
+    margin-left: 5%;
+    margin-top: 104px;
+    width: 65%;
+}
+{block:IfHideSidebar}
+#content {
+    width: 90%;
+}
+#sidebar {
+    display: none;
+}
+{/block:IfHideSidebar}
+/*Articles*/
+#content article {
+    margin-bottom: 2%;
+}
+article .inner {
+    display: inline-block;
+    padding: 4%;
+    width: 92%;
+}
+.item .inner {
+    display: inline-block;
+    padding: 1% 5%;
+    width: 92%;
+}
+/*Post styles*/
+.title a {
+    color: {color:Text};
+}
+blockquote {
+    background: rgba(0, 0, 0, 0.06);
+    margin: 0;
+    padding: 2%;
+}
+.photo img {
+    display: block;
+}
+.photoset-wrap img {
+    width: 49%;
+}
+.link .title a {
+    border-bottom: 1px solid;
+}
+.chat ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.chat li {
+    padding: 0.5% 2%;
+}
+.chat .even {
+    background: rgba(242, 242, 242, 0.11);
+}
+.user {
+    font-size: 0.85em;
+    text-align: center;
+    text-transform: uppercase;
+    float: left;
+    margin-right: 3%;
+}
+/*Tags*/
+.metadata {
+    font-size: 0.9em;
+    padding: 2% 4%;
+}
+.metadata ul {
+    width: 100%;
+    display: inline-block;
+}
+.metadata ul, #notes ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.tags {
+    margin-top: 1% !important;
+}
+.tags li {
+    padding: 0.5%;
+    margin: 1% 0;
+    background: rgba(37, 37, 37, 0.11);
+}
+.avatar {
+    margin-right: 10px;
+}
+.index li, .tags li {
+    float: left;
+    margin-right: 2%;
+}
+.note {
+    border-bottom: 1px solid white;
+    padding: 2px 0;
+}
+/*Sidebar items*/
+.item form input {
+    background: rgba(0, 0, 0, 0.06);
+    border: 0;
+    padding: 2% 1%;
+    width: 96%;
+    margin-bottom: 20px;
+}
+#likes {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#followed ul {
+    display: inline-block;
+    list-style: none;
+    margin: 0 0 4% 0;
+    padding: 0;
+    width: 100%;
+}
+#followed img {
+    opacity: 0.5;
+    display: block;
+    float: left;
+}
+#followed img:hover {
+    opacity: 1;
+}
+/*Pagination*/
+#pagination li a {
+    display:none;
+    background: #fff;
+    margin-right: 1%;
+    padding: 1%;
+}
+/*Common styles*/
+#content article::before, .item::before {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -2;
+    display: block;
+    position: absolute;
+    content: " ";
+    background: url('{image:Background}') repeat fixed;
+    background-size: 100%;
+    -webkit-filter: blur(10px);
+    filter: blur(10px);
+}
+#content article::after, .item::after {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    display: block;
+    position: absolute;
+    top: 0;
+    content: " ";
+    background: {color:Glass Tint};
+    opacity: 0.4;
+}
+{block:IndexPage} 
+#content article > *, .item > * {
+    opacity: 0.6;
+    transition: all 0.4s;
+}
+#content article:hover > *, .item:hover > * {
+    opacity: 1;
+}
+{/block:IndexPage} 
+/*blockquote, img, .item form input {
+    box-shadow: 0px 1px 6px 1px rgba(0, 0, 0, 0.05) inset;
+}*/
+{CustomCSS}
+</style>
+</head>
+
+<body>
+<header id="masthead">
+    <!--<img src="{PortraitURL-64}"/>-->
+    <div id="icon"></div>
+    <h1><a href="/" title="{lang:Home}">{Title}</a></h1>
+    <nav>
+        {block:HasPages}
+        {block:Pages}
+        <h4> <a href="{URL}">{Label}</a></h4>
+        {/block:Pages}
+        {/block:HasPages}
+        {block:SubmissionsEnabled}
+        <h4> <a href="/submit">{SubmitLabel}</a></h4>
+        {/block:SubmissionsEnabled}
+        {block:AskEnabled}
+        <h4> <a href="/ask">{AskLabel}</a></h4>
+        {/block:AskEnabled}
+
+        {block:ifLink1Text}
+        <h4> <a href="{text:Link 1}">{text:Link 1 Text}</a></h4>
+        {/block:ifLink1Text}
+
+        {block:ifLink2Text}
+        <h4> <a href="{text:Link 2}">{text:Link 2 Text}</a></h4>
+        {/block:ifLink2Text}
+
+        {block:ifLink3Text}
+        <h4> <a href="{text:Link 3}">{text:Link 3 Text}</a></h4>
+        {/block:ifLink3Text}
+
+        {block:ifLink4Text}
+        <h4> <a href="{text:Link 4}">{text:Link 4 Text}</a></h4>
+        {/block:ifLink4Text}
+
+        {block:ifLink5Text}
+        <h4> <a href="{text:Link 5}">{text:Link 5 Text}</a></h4>
+        {/block:ifLink5Text}
+
+        {block:ifLink6Text}
+        <h4> <a href="{text:Link 6}">{text:Link 6 Text}</a></h4>
+        {/block:ifLink6Text}
+
+        {block:ifLink7Text}
+        <h4> <a href="{text:Link 7}">{text:Link 7 Text}</a></h4>
+        {/block:ifLink7Text}
+
+        {block:ifLink8Text}
+        <h4> <a href="{text:Link 8}">{text:Link 8 Text}</a></h4>
+        {/block:ifLink8Text}
+
+        {block:ifLink9Text}
+        <h4> <a href="{text:Link 9}">{text:Link 9 Text}</a></h4>
+        {/block:ifLink9Text}
+
+        {block:ifLink10Text}
+        <h4> <a href="{text:Link 10}">{text:Link 10 Text}</a></h4>
+        {/block:ifLink10Text}
+    </nav>
+</header>
+
+<aside id="sidebar">
+    {block:IfSearchAndDescriptionInSidebar}
+    <div class="item">
+        <div class="inner">
+            {block:Description}
+            <h2>{lang:About}</h2>
+            <p>{Description}</p>
+            {block:Description}
+            
+            <form action="/search" method="get">
+                <input type="text" name="q" value="{SearchQuery}" placeholder="{lang:Search}"/>
+            </form>
+        </div>
+    </div>
+    {/block:IfSearchAndDescriptionInSidebar}
+
+    {block:IfLikesInSidebar}
+    {block:Likes}
+    <div class="item">
+        <div class="inner">
+            <h2>{lang:Likes}</h2>
+            {Likes limit="1" summarize="100" width="150"}
+            <a href="http://www.tumblr.com/liked/by/{Name}">
+            {lang:More liked posts}
+            </a>
+        </div>
+    </div>
+    {/block:Likes}
+    {/block:IfLikesInSidebar}
+
+    {block:IfFollowingInSidebar}
+    {block:Following}
+    <div class="item">
+        <div class="inner">
+            <h2>{lang:People I follow}</h2>
+            <div id="followed">
+                <ul>
+                    {block:Followed}
+                    <li>
+                        <a href="{FollowedURL}"><img src="{FollowedPortraitURL-48}"/></a>
+                    </li>
+                    {/block:Followed}
+                </ul>
+            </div>
+        </div>
+    </div>
+    {/block:Following}
+    {/block:IfFollowingInSidebar}
+</aside>
+ 
+<div id="content">
+    {block:Posts}
+    <article class="{select:Columns}">
+        {block:Text}
+        <div class="text inner">
+            {block:Title}<h1 class="title"><a href="{Permalink}">{Title}</a></h1>{/block:Title}
+            {Body}
+        {/block:Text}
+
+        {block:Photo}
+        <div class="photo inner">
+            {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" />{LinkCloseTag}
+            {block:Caption}{Caption}{/block:Caption}
+        {/block:Photo}
+
+        {block:Photoset}
+        <div class="photoset inner">
+            <!--{Photoset-500}-->
+            <div class="photoset-wrap">
+            {block:Photos}
+                <img src="{PhotoURL-500}" />
+            {/block:Photos}
+            </div>
+            {block:Caption}{Caption}{/block:Caption}
+        {/block:Photoset}
+
+        {block:Quote}
+        <div class="quote inner">
+            <blockquote>{Quote}</blockquote>
+            {block:Source}<cite> {Source} </cite>{/block:Source}
+        {/block:Quote}
+
+        {block:Link}
+        <div class="link inner">
+            <h1 class="title"><a href="{URL}">{Name}</a></h1>
+            {block:Description}{Description}{/block:Description}
+        {/block:Link}
+
+        {block:Chat}
+        <div class="chat inner">
+            <ul>
+                {block:Lines}<li class="{Alt}"><p>{block:Label}<strong>{Label}</strong>{/block:Label} {Line} </p></li>{/block:Lines}
+            </ul>
+        {/block:Chat}
+
+        {block:Audio}
+        <div class="audio inner">
+            {block:TrackName}<h1 class="title"><a href="{Permalink}">{TrackName}</a></h1>{/block:TrackName}
+            {block:AlbumArt}<img src="{AlbumArtURL}" width="500" height="500"/>{/block:AlbumArt}
+            {AudioPlayerBlack}
+            {block:Caption}{Caption}{/block:Caption}
+        {/block:Audio}
+
+        {block:Video}
+        <div class="video inner">
+            {Video-700}
+            {block:Caption}{Caption}{/block:Caption}
+        {/block:Video}
+
+        {block:Answer}
+        <div class="answer inner">
+            <h1 class="title">{Question}</h1>
+            <div class="user"><img src="{AskerPortraitURL-96}"/><p>{Asker}</p></div>
+            {Answer}
+        {/block:Answer}
+        </div>
+
+        {block:Date}
+        <footer class="metadata">
+            <ul class="index">
+                <li><a href="{Permalink}"> <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}">{DayOfMonth} {Month} {Year}</time> </a></li>
+
+                {block:NoteCount}<li><a class="notecount" href="{Permalink}#notes">{NoteCountWithLabel}</a></li>{/block:NoteCount}
+                
+                {block:ContentSource}
+                <li><a href="{SourceURL}">{lang:Source}:{block:NoSourceLogo}{SourceTitle}{/block:NoSourceLogo}
+                {block:SourceLogo}<img src="{BlackLogoURL}" width="{LogoWidth}"height="{LogoHeight}" alt="{SourceTitle}" />{/block:SourceLogo}</a></li>
+                {/block:ContentSource} 
+            </ul>
+
+            {block:PermalinkPage}
+            {block:HasTags}
+            <ul class="tags">
+                {block:Tags}<li><a href="{TagURL}">{Tag}</a> </li>{/block:Tags}
+            </ul>
+            {/block:HasTags}
+            
+            {block:PostNotes}
+            <div id="notes">
+                {PostNotes}
+            </div>
+            {/block:PostNotes} 
+            {/block:PermalinkPage} 
+        </footer>
+        {/block:Date}
+     </article>
+    {/block:Posts}
+    {block:Pagination}
+    <nav id="pagination">
+        <ul>
+            {block:PreviousPage}<li><a href="{PreviousPage}">Previous page</a></li>{/block:PreviousPage}
+            {block:NextPage}<li><a href="{NextPage}">Next page</a></li>{/block:NextPage}
+        </ul>
+    </nav>
+    {/block:Pagination}
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://static.tumblr.com/iwtk77u/Yhym2yygt/jquery.imagesloaded.min.js"></script>
+<script src="http://static.tumblr.com/wgijwsy/Ebfm2v4gy/jquery.masonry.min.js"></script>
+<script src="http://static.tumblr.com/wgijwsy/u2vm2hxv6/jquery.infinitescroll.min.js"></script>
+<script>
+(function () {
+    var $tumblelog = $('#content');
+    $tumblelog.infinitescroll({
+        navSelector: "#pagination",
+        nextSelector: "#pagination a:last-child",
+        itemSelector: "article",
+    },
+
+    function (newElements) {
+        var $newElems = $(newElements).css({
+            opacity: 0
+        });
+        $newElems.imagesLoaded(function () {
+            $newElems.animate({
+                opacity: 1
+            });
+            $tumblelog.masonry('appended', $newElems);
+        });
+    });
+    $tumblelog.imagesLoaded(function () {
+        $tumblelog.masonry({
+            columnWidth: function (containerWidth) {
+                return containerWidth / 100;
+            }
+        });
+    });
+})();
+</script>
+</body>
+</html>
