@@ -9,6 +9,7 @@
 <meta name="color:Text" content="#ffffff" />
 <meta name="font:Font" content="Arquitecta"/>
 <meta name="if:Persistent Masthead" content="1"/>
+<meta name="if:FadeContent" content="1"/>
 <meta name="if:Following in sidebar" content="1"/>
 <meta name="if:Hide sidebar" content="0"/>
 <meta name="if:Likes in sidebar" content="1"/>
@@ -51,7 +52,7 @@
 <style>
 /*Basic styles*/
 body {
-    background: {color:Background} url('{image:Background}') repeat fixed;
+    background: {color:Background} url('{image:Background}') center center repeat fixed;
     background-size: 100%;
     color: {color:Text};
     font-family: {font:Font};
@@ -312,7 +313,7 @@ blockquote {
     display: block;
     position: absolute;
     content: " ";
-    background: url('{image:Background}') repeat fixed;
+    background: url('{image:Background}') center center repeat fixed;
     background-size: 100%;
     -webkit-filter: blur(10px);
     filter: blur(10px);
@@ -329,7 +330,8 @@ blockquote {
     background: {color:Glass Tint};
     opacity: 0.4;
 }
-{block:IndexPage} 
+{block:IndexPage}
+{block:IfFadeContent}
 #content article > *, .item > * {
     opacity: 0.6;
     transition: all 0.4s;
@@ -337,6 +339,7 @@ blockquote {
 #content article:hover > *, .item:hover > * {
     opacity: 1;
 }
+{/block:IfFadeContent}
 {/block:IndexPage} 
 /*blockquote, img, .item form input {
     box-shadow: 0px 1px 6px 1px rgba(0, 0, 0, 0.05) inset;
